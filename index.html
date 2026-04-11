@@ -57,7 +57,7 @@
       margin: 0 auto;
       padding: 0 32px;
     }
-
+    
     .section-label {
       display: inline-block;
       font-size: .75rem;
@@ -69,14 +69,15 @@
     }
 
     .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem); /* Ens størrelse som hero title */
       color: var(--brown);
       margin-bottom: 20px;
+      text-align: left; /* Centreret venstre (flugter) */
     }
 
     .section-intro {
       font-size: 1.05rem;
-      color: var(--brown-mid);
+      color: var(--brown); /* Samme farve som overskrift */
       max-width: 560px;
       line-height: 1.8;
     }
@@ -208,18 +209,19 @@
       z-index: 2;
     }
 
-
     .hero-text {
       font-size: 1.05rem;
-      color: var(--brown-mid);
+      color: var(--brown); /* Samme farve som overskrift */
       line-height: 1.85;
       max-width: none;
+      margin-bottom: 16px;
     }
 
     .hero-actions {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      margin-top: 28px;
     }
 
     .btn-primary {
@@ -252,6 +254,16 @@
     .btn-soft:hover {
       background: var(--brown-light);
       box-shadow: 0 8px 28px rgba(107,94,85,.25);
+    }
+
+    .btn-sage {
+      background: var(--sage);
+      box-shadow: 0 4px 20px rgba(124,158,138,.2);
+    }
+
+    .btn-sage:hover {
+      background: var(--sage-dark);
+      box-shadow: 0 8px 28px rgba(124,158,138,.25);
     }
 
     .hero-image-wrap {
@@ -329,7 +341,7 @@
     .about-content { padding: 10px 0; }
 
     .about-body {
-      color: var(--brown-mid);
+      color: var(--brown); /* Samme farve som overskrift */
       font-size: 1.05rem;
       line-height: 1.85;
       margin-bottom: 18px;
@@ -357,7 +369,7 @@
 
     .about-card p {
       font-size: .95rem;
-      color: var(--brown-mid);
+      color: var(--brown); /* Samme farve som overskrift */
       line-height: 1.85;
     }
 
@@ -373,18 +385,19 @@
     }
 
     .services-header {
-      text-align: center;
+      text-align: left; /* Fjernet center for at flugte venstre */
       margin-bottom: 60px;
     }
 
     .services-header .section-intro {
-      margin: 0 auto;
+      margin: 0; /* Fjernet auto margin */
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+      margin-top: 60px;
     }
 
     .service-card {
@@ -431,7 +444,7 @@
 
     .service-text {
       font-size: .9rem;
-      color: var(--brown-mid);
+      color: var(--brown); /* Samme farve som overskrift */
       line-height: 1.8;
     }
 
@@ -460,21 +473,42 @@
       display: block;
     }
 
-    /* ─── Naturbillede ─── */
-    .photo-divider {
-      background: var(--beige);
-      padding: var(--section-gap) 0 0 0;
+    /* Underoverskrifter opdatering */
+    .terapi-subheading,
+    .praktisk-intro {
+      font-family: 'DM Sans', sans-serif; /* Samme font som brødtekst */
+      font-size: 1.155rem; /* 10% større end standard brødtekst 1.05rem */
+      color: var(--brown);
+      font-weight: 500;
+      margin-bottom: 16px;
     }
 
-    .photo-divider img {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 32px;
-      width: 100%;
-      height: auto;
-      border-radius: var(--radius-md);
-      display: block;
+    .terapi-intro-note {
+      margin-top: 8px;
     }
+
+    .terapi-list {
+      max-width: 560px;
+      margin: 12px 0 0;
+      text-align: left;
+    }
+
+    /* ─── Naturbillede ─── */
+/* 1. Style the container to handle the spacing */
+.photo-divider {
+  background: var(--beige);
+  padding: 40px 32px; /* Spacing above/below and at the sides */
+}
+
+/* 2. Style the image to handle the curve */
+.photo-divider img {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg); /* Use your variable for consistency */
+  display: block;
+}
 
     /* ─── Citat ─── */
     #citat {
@@ -502,11 +536,15 @@
       font-family: 'Cormorant Garamond', Georgia, serif;
       font-style: italic;
       font-size: 1rem;
-      color: var(--brown-mid);
+      color: var(--brown); /* Samme farve som overskrift */
     }
 
     /* ─── Prices / Praktisk ─── */
     #praktisk { background: var(--white); }
+
+    .praktisk-intro {
+      margin-bottom: 40px;
+    }
 
     .prices-row {
       display: grid;
@@ -538,12 +576,12 @@
       box-shadow: var(--shadow-card);
     }
 
+    /* Grøn boks - samme som 'Book tid' bjælken */
     .price-card.featured {
-      background: var(--brown);
-      border-color: var(--brown);
+      background: var(--sage);
+      border-color: var(--sage);
     }
 
-    .price-card-info {}
     .price-card-label {
       font-size: 1.2rem;
       font-family: 'Cormorant Garamond', serif;
@@ -557,7 +595,7 @@
       color: var(--brown-light);
     }
 
-    .price-card.featured .price-card-sub { color: rgba(255,255,255,.55); }
+    .price-card.featured .price-card-sub { color: rgba(255,255,255,.75); }
 
     .price-amount {
       font-family: 'Cormorant Garamond', serif;
@@ -607,7 +645,7 @@
 
     .prices-aside p {
       font-size: 1rem;
-      color: var(--brown-mid);
+      color: var(--brown); /* Samme farve som overskrift */
       line-height: 1.8;
       margin-bottom: 32px;
     }
@@ -629,7 +667,13 @@
     .contact-inner > div {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: center; /* Left center tilpasset i parent */
+      text-align: left;
+    }
+    
+    .contact-inner .section-title,
+    .contact-inner .section-intro {
+      align-self: flex-start;
     }
 
     .contact-info-list {
@@ -638,7 +682,7 @@
       display: flex;
       flex-direction: column;
       gap: 28px;
-      align-self: center;
+      align-self: flex-start;
       text-align: left;
     }
 
@@ -763,7 +807,7 @@
 
     .hero-list li {
       font-size: 1rem;
-      color: var(--brown-mid);
+      color: var(--brown); /* Samme farve som overskrift */
       padding-left: 20px;
       position: relative;
     }
@@ -774,31 +818,6 @@
       left: 0;
       color: var(--sage);
     }
-
-    /* Override hero-text spacing for multi-paragraph hero */
-    .hero-text { margin-bottom: 16px; }
-    .hero-actions { margin-top: 28px; }
-
-    .terapi-subheading {
-      margin-bottom: 16px;
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-    }
-
-    .terapi-intro-note {
-      margin-top: 8px;
-    }
-
-    .terapi-list {
-      max-width: 560px;
-      margin: 12px 0 0;
-      text-align: left;
-    }
-
-    .praktisk-intro {
-      margin-bottom: 40px;
-    }
-
-    #terapi .services-grid { margin-top: 60px; }
 
     /* ─── Etik ─── */
     #etik { background: var(--beige); }
@@ -830,16 +849,13 @@
       .hero-title { width: auto; }
       .hero-image-wrap { order: -1; max-width: 360px; margin: 0 auto; }
 
-.about-inner { grid-template-columns: 1fr; gap: 40px; }
+      .about-inner { grid-template-columns: 1fr; gap: 40px; }
       .about-image { max-width: 320px; margin: 0 auto; }
       .about-accent, .about-accent2 { display: none; }
 
       .services-grid { grid-template-columns: 1fr; }
-
       .prices-row { grid-template-columns: 1fr; }
-
       .terapi-feature { grid-template-columns: 1fr; gap: 32px; }
-
     }
 
     @media (max-width: 560px) {
@@ -855,16 +871,15 @@
 
 <body>
 
-  <!-- ─── Navigation ─── -->
   <nav id="main-nav">
     <div class="container nav-inner">
       <a href="#hjem" class="nav-logo">Lotte <span>Damsgaard Mortensen</span></a>
       <ul class="nav-links">
-        <li><a href="#hjem">Hjem</a></li>
-        <li><a href="#terapi">Tilgang &amp; metode</a></li>
-        <li><a href="#om-mig">Om mig</a></li>
-        <li><a href="#praktisk">Praktisk info</a></li>
-        <li><a href="#etik">Etik</a></li>
+        <li><a href="#hjem">HJEM</a></li>
+        <li><a href="#terapi">TILGANG &amp; METODE</a></li>
+        <li><a href="#om-mig">OM MIG</a></li>
+        <li><a href="#praktisk">PRAKTISK INFO</a></li>
+        <li><a href="#etik">ETIK</a></li>
         <li><a href="#kontakt" class="nav-cta">Book tid</a></li>
       </ul>
       <button class="burger" id="burger-btn" aria-label="Åbn menu">
@@ -873,7 +888,6 @@
     </div>
   </nav>
 
-  <!-- ─── Mobile menu ─── -->
   <div class="mobile-menu" id="mobile-menu">
     <button class="mobile-close" id="mobile-close">✕</button>
     <a href="#hjem" class="mobile-link">Hjem</a>
@@ -884,7 +898,6 @@
     <a href="#kontakt" class="btn-primary mobile-link" style="font-size:.95rem;margin-top:8px;">Book tid</a>
   </div>
 
-  <!-- ─── Hero ─── -->
   <section id="hjem">
     <div class="hero-inner">
       <div>
@@ -915,13 +928,11 @@
       <div class="hero-image-wrap">
         <div class="hero-image-card">
           <img src="Blomst.jpg" alt="Psykoterapi i et trygt rum" />
-          <!-- Prøv Blomst.jpeg, Blomst.JPG eller Blomst.png hvis Blomst.jpg ikke virker -->
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── Terapi & metode ─── -->
   <section id="terapi">
     <div class="container">
       <div class="services-header">
@@ -932,10 +943,9 @@
       <div class="terapi-feature">
         <div class="terapi-feature-image">
           <img src="Sti.jpg" alt="Stien videre" />
-          <!-- Prøv Sti.jpeg, Sti.JPG eller Sti.png hvis Sti.jpg ikke virker -->
         </div>
         <div>
-          <h3 class="section-title terapi-subheading">Hvad kan du forvente af forløbet?</h3>
+          <h3 class="terapi-subheading">Hvad kan du forvente af forløbet?</h3>
           <p class="section-intro">
             Forskning viser, at psykoterapi har en positiv effekt på mange psykiske problemer.
           </p>
@@ -954,49 +964,44 @@
       </div>
 
       <div class="services-grid">
-        <div class="service-card">
-          <div class="service-icon">❤️</div>
-          <h3 class="service-title">Integral tilgang</h3>
-          <p class="service-text">
-            Jeg er uddannet indenfor en integral ramme. Det betyder
-            bl.a., at min terapi, alt efter problematikken, kan tage afsæt
-            i forskellige psykologiske retninger. Nogle gange vil den
-            psykodynamiske give mest mening, andre gange har jeg f.eks.
-            en kognitiv, en humanistisk eller en eksistentiel tilgang.
-          </p>
-        </div>
+  <div class="service-card">
+    <div class="service-icon"><img src="hjerte.png" alt="Ikon"></div> <h3 class="service-title">Integral tilgang</h3>
+    <p class="service-text">
+      Jeg er uddannet indenfor en integral ramme. Det betyder
+      bl.a., at min terapi, alt efter problematikken, kan tage afsæt
+      i forskellige psykologiske retninger. Nogle gange vil den
+      psykodynamiske give mest mening, andre gange har jeg f.eks.
+      en kognitiv, en humanistisk eller en eksistentiel tilgang.
+    </p>
+  </div>
 
-        <div class="service-card">
-          <div class="service-icon">🧡</div>
-          <h3 class="service-title">Enneagrammet</h3>
-          <p class="service-text">
-            Jeg er inspireret af Enneagrammet. Det er et
-            psykologisk og filosofisk system, der bruges til at forstå
-            personlighedstyper og motivationsmønstre. Det er et raffineret
-            redskab til personlig udvikling, kommunikation og
-            konfliktløsning.
-          </p>
-        </div>
+  <div class="service-card">
+    <div class="service-icon"><img src="hjerte.png" alt="Ikon"></div> <h3 class="service-title">Enneagrammet</h3>
+    <p class="service-text">
+      Jeg er inspireret af Enneagrammet. Det er et
+      psykologisk og filosofisk system, der bruges til at forstå
+      personlighedstyper og motivationsmønstre. Det er et raffineret
+      redskab til personlig udvikling, kommunikation og
+      konfliktløsning.
+    </p>
+  </div>
 
-        <div class="service-card">
-          <div class="service-icon">💜</div>
-          <h3 class="service-title">Et anerkendende rum</h3>
-          <p class="service-text">
-            Jeg er uddannet og trænet i at holde rummet og bevidne,
-            det du fortæller. Hos mig er alt velkomment – og du er
-            velkommen.
-          </p>
-        </div>
-      </div>
+  <div class="service-card">
+    <div class="service-icon"><img src="hjerte.png" alt="Ikon"></div> <h3 class="service-title">Et anerkendende rum</h3>
+    <p class="service-text">
+      Jeg er uddannet og trænet i at holde rummet og bevidne,
+      det du fortæller. Hos mig er alt velkomment – og du er
+      velkommen.
+    </p>
+  </div>
+</div>
     </div>
   </section>
 
-  <!-- ─── About ─── -->
   <section id="om-mig">
     <div class="container">
       <div class="about-inner">
 
-        <!-- VENSTRE kolonne: overskrift + bokse -->
         <div>
           <span class="section-label">Om mig</span>
           <h2 class="section-title" style="white-space:nowrap;">Lotte Damsgaard Mortensen</h2>
@@ -1021,7 +1026,6 @@
           </div>
         </div>
 
-        <!-- HØJRE kolonne: profilbillede -->
         <div class="about-image-wrap">
           <div class="about-accent"></div>
           <div class="about-accent2"></div>
@@ -1037,12 +1041,10 @@
     </div>
   </section>
 
-  <!-- ─── Naturbillede ─── -->
   <div class="photo-divider">
-    <img src="Nydning.JPG" alt="Ro og nærvær ved vandet" />
+    <img src="Nydning.JPG" alt="Ro og nærvær ved vandet" style="border-radius: 15px;" />
   </div>
 
-  <!-- ─── Citat ─── -->
   <section id="citat">
     <div class="citat-inner">
       <p class="citat-quote">
@@ -1053,13 +1055,12 @@
     </div>
   </section>
 
-  <!-- ─── Praktisk info ─── -->
   <section id="praktisk">
     <div class="container">
       <div class="prices-content">
         <span class="section-label">Praktisk info</span>
         <h2 class="section-title">Enkelt og gennemsigtigt</h2>
-        <p class="section-intro praktisk-intro">
+        <p class="praktisk-intro">
           Alt det praktiske du har brug for at vide, inden vi mødes.
         </p>
       </div>
@@ -1075,7 +1076,7 @@
             Samtalerne foregår på adressen: Nordtoft 47, 9000 Aalborg.
             Online terapi er en mulighed.
           </p>
-          <a href="#kontakt" class="btn-primary btn-soft">Kontakt mig</a>
+          <a href="#kontakt" class="btn-primary btn-sage">Kontakt mig</a>
         </div>
 
         <div class="prices-image-wrap">
@@ -1108,7 +1109,6 @@
     </div>
   </section>
 
-  <!-- ─── Etik ─── -->
   <section id="etik">
     <div class="container">
       <div class="services-header">
@@ -1116,7 +1116,7 @@
         <h2 class="section-title">Tavshedspligt og professionelle rammer</h2>
       </div>
 
-      <div class="services-grid">
+      <div class="services-grid" style="margin-top: 0;">
         <div class="service-card">
           <div class="service-icon">🔒</div>
           <h3 class="service-title">Tavshedspligt</h3>
@@ -1147,7 +1147,6 @@
     </div>
   </section>
 
-  <!-- ─── Contact ─── -->
   <section id="kontakt">
     <div class="container">
       <div class="contact-inner">
@@ -1190,13 +1189,12 @@
             </li>
           </ul>
 
-          <a href="mailto:dramalotte@gmail.com" class="btn-primary" style="margin-top:24px;">Skriv til mig</a>
+          <a href="mailto:dramalotte@gmail.com" class="btn-primary btn-sage" style="margin-top:24px; align-self:flex-start;">Skriv til mig</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── Footer ─── -->
   <footer>
     <div class="container">
       <p class="footer-logo">Lotte Damsgaard Mortensen</p>
@@ -1211,7 +1209,6 @@
     </div>
   </footer>
 
-  <!-- ─── JavaScript ─── -->
   <script>
     // Nav shadow on scroll
     const nav = document.getElementById('main-nav');
@@ -1228,3 +1225,19 @@
     burger.addEventListener('click', () => {
       mobileMenu.classList.add('open');
       document.body.style.overflow = 'hidden';
+    });
+
+    mobileClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  </script>
+</body>
+</html>
