@@ -1,19 +1,21 @@
-name: 🚀 Deploy to Simply.com
+name: 🚀 Multi-Branch Deploy
 
 on:
   push:
     branches:
       - main
+      - dev
 
 jobs:
   web-deploy:
-    name: 📂 FTP Sync
+    name: 📂 Sync Files
     runs-on: ubuntu-latest
     steps:
       - name: 🚚 Checkout Code
         uses: actions/checkout@v4
 
-      - name: 📤 Sync Files
+      - name: 📤 Sync to Production (Main)
+        if: github.ref == 'refs/heads/main'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -21,8 +23,13 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ./public_html/
           protocol: ftp
-          port: 21
-          # These three lines often fix the ECONNRESET error:
-          dangerous-clean-slate: false
-          timeout: 60000
-          log-level: verbose
+
+      - name: 📤 Sync to Staging (Dev)
+        if: github.ref == 'refs/heads/dev'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ./dev/  # Matches the folder in your screenshot
+          protocol: ftp
