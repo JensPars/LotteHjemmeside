@@ -22,9 +22,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ./public_html/
-          protocol: sftp   # Switched to SFTP
-          port: 22         # Switched to Port 22
-          timeout: 120000  # Increased timeout for 4MB upload
+          protocol: ftp
 
       - name: 📤 Sync to Staging (Dev)
         if: github.ref == 'refs/heads/dev'
@@ -34,7 +32,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ./dev/
-          protocol: sftp   # Switched to SFTP
-          port: 22         # Switched to Port 22
-          timeout: 120000
-          state-name: .dev-sync-state.json
+          protocol: ftp
