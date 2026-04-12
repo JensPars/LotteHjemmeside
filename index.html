@@ -297,7 +297,7 @@
       .nav-links, .nav-cta { display: none; }
       .burger { display: block; }
       .hero-grid, .terapi-feature, .about-inner, .prices-row, .contact-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; } /* Re-enabled to stack on mobile */
       .hero-image-wrap { aspect-ratio: 16/10; order: 2; }
     }
   </style>
@@ -375,18 +375,268 @@
             <h2 class="section-title">Hvad kan du forvente af forløbet?</h2>
             <p class="section-intro">Gennem samtalen kan du tage ansvar for dig selv på en selvkærlig måde og skabe mere energi og glæde i hverdagen.</p>
           </div>
-          <div style="margin-top: 40px; display: flex; flex-direction: column; gap: 32px;">
-            <div class="fade-up">
-              <h3 style="font-size: 1.6rem; color: var(--sage-dark);">Integral tilgang</h3>
-              <p>Jeg kombinerer psykodynamiske, kognitive og humanistiske tilgange tilpasset dig.</p>
-            </div>
-            <div class="fade-up">
-              <h3 style="font-size: 1.6rem; color: var(--sage-dark);">Enneagrammet</h3>
-              <p>Et redskab til at forstå din personlighed og de motivationsmønstre, der driver dig.</p>
-            </div>
+          <div class="fade-up" style="margin-top: 20px;">
+            <p style="font-size: 0.95rem; line-height: 1.6;">Forskning viser, at psykoterapi har en positiv effekt på mange psykiske problemer. Det har det, fordi det:</p>
+            <ul class="hero-list" style="margin-top: 15px;">
+              <li>forløser følelsesmæssige spændinger</li>
+              <li>giver tryghed og ro gennem empati</li>
+              <li>giver læring, feedback og selvindsigt</li>
+              <li>regulerer følelser og handlinger</li>
+              <li>omformulerer selvopfattelser</li>
+              <li>konfronterer frygt</li>
+              <li>klargør mål med livet</li>
+            </ul>
           </div>
         </div>
       </div>
+      <div class="services-grid" style="margin-top: 40px;">
+        <div class="service-card fade-up" style="display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--white); border: 1px solid var(--beige);">
+          <img src="hjerte.png" alt="Hjerte ikon" style="display: block; margin: 0 auto 15px auto; width: 40px; height: auto;">
+          <h3 style="font-size: 1.6rem; color: var(--sage-dark); margin-bottom: 10px;">Integral tilgang</h3>
+          <p style="font-size: 0.95rem; line-height: 1.6;">
+            Jeg er uddannet indenfor en integral ramme. Det betyder bl.a., at min terapi kan tage afsæt i forskellige psykologiske retninger. Nogle gange vil den psykodynamiske give mest menning, andre gange vil jeg vælge en kognitiv, en humanistisk eller en eksistentiel tilgang. Værkstøjskassen er stor
+          </p>
+        </div>
+        <div class="service-card fade-up" style="display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--white); border: 1px solid var(--beige);">
+          <img src="hjerte.png" alt="Hjerte ikon" style="display: block; margin: 0 auto 15px auto; width: 40px; height: auto;">
+          <h3 style="font-size: 1.6rem; color: var(--sage-dark); margin-bottom: 10px;">Inspiration</h3>
+          <p style="font-size: 0.95rem; line-height: 1.6;">
+            Udover bl.a. Jungs teori, læren om det ubevidste og skyggearbejde, er jeg især inspireret af Enneagrammet, et psykologisk og filosofisk system, der bruges til at forstå personlighedstyper og motivationsmønstre. Det er et reffineret redskab til personlig udvikling, kommunikation og konflikløsning.
+          </p>
+        </div>
+        <div class="service-card fade-up" style="display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--white); border: 1px solid var(--beige);">
+          <img src="hjerte.png" alt="Hjerte ikon" style="display: block; margin: 0 auto 15px auto; width: 40px; height: auto;">
+          <h3 style="font-size: 1.6rem; color: var(--sage-dark); margin-bottom: 10px;">Et anerkendende rum</h3>
+          <p style="font-size: 0.95rem; line-height: 1.6;">
+            Jeg har i løbet af min uddannelse arbejdet bla med mine egne personlige historier, mine overbevisninger og reaktionsmønstre. Ved at gå vejen selv har jeg fået en vågenhed i forhold til hvad der sker i vores møde. Jeg er uddannet og trænet i at holde rummet og bevidne det, du fortæller. Hos mig er alt velkomment - og du er hjertelig velkommen!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="citat">
+    <img src="Nydning.JPG" alt="Ro" class="parallax-img fade-in-slow" data-speed="-0.15" />
+    <div class="image-overlay"></div>
+    <div class="container fade-up in-focus">
+      <p class="citat-quote">"Ved at sige tanker højt, ved at flytte en erindring fra vores eget indre over til et andet menneske kan den få lov at findes i verden — og sammen kan vi gøre noget ved det."</p>
+      <p class="citat-author">— Michel Foucault</p>
+    </div>
+  </section>
+
+  <section id="om-mig">
+    <div class="container">
+      <span class="section-label">Om mig</span>
+      <div class="about-inner" style="margin-top: 24px;">
+        <div class="fade-up" style="display: flex; flex-direction: column;">
+          <h2 class="section-title">Lotte Damsgaard Mortensen</h2>
+          <div class="about-card">
+            <p style="font-size: 0.95rem; line-height: 1.6;">Jeg er frem til foråret 2028 under uddannelse som psykoterapeut på Vadum Dahl Instituttet i København. Uddannelsen er båret af et holistisk og spirituelt syn på mennesket. Det præger min egen praksis.</p>
+          </div>
+          <div class="about-card">
+            <p style="font-size: 0.95rem; line-height: 1.6;">Uddannet folkeskolelærer. Diplomuddannelse i drama og teater. Mange års erfaring med undervisning af børn, unge og voksne, kursusaktivitet og udgivelser af undervisningsmaterialer. Teaterarbejde med mennesker fra tre til tres år, hvor leg, samarbejde, skaberkraft og det hele unikke menneske er i fokus. Mange års praktisering af yoga, yoga nidra og meditation.</p>
+          </div>
+          <div class="about-card">
+            <p style="font-size: 0.95rem; line-height: 1.6;">Min egen livsbane har været og er fuld af menneskelige møder og erfaringer. Noget af det, jeg har taget med mig, er forståelsen for, at vi mennesker er meget forskellige og dog så ens. Vi deler bl.a. behovet for kærlighed, tryghed og frihed til udfoldelse. Min livserfaring kombineret med faglig viden og træning bevirker, at jeg kan tage afsæt i lige præcis den, du er. Mentalt, fysisk, kulturelt og sjæleligt.</p>
+          </div>
+        </div>
+        <div class="parallax-element" data-speed="-0.06">
+          <div class="hero-image-wrap fade-up">
+            <img src="Profil.jpeg" alt="Lotte" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="praktisk" style="background: var(--white);">
+    <div class="container">
+      <span class="section-label">Praktisk info</span>
+      <div class="prices-content fade-up" style="margin-top: 24px;">
+        <h2 class="section-title">Enkelt og gennemsigtigt</h2>
+        <p class="section-intro">
+          Alt det praktiske du har brug for at vide, inden vi mødes.
+        </p>
+      </div>
+
+      <div class="prices-row">
+        <div class="prices-aside fade-up">
+          <h3>Sådan kommer vi i gang</h3>
+          <p>Kontakt mig i første omgang på mail eller sms for en aftale om en 15 minutters uforpligtende telefonsamtale.</p>
+          <p>Samtalerne foregår på adressen: <strong>Nordtoft 47, 9000 Aalborg</strong>.</p>
+          <a href="#kontakt" class="btn-primary" style="margin-top: 10px;">Kontakt mig</a>
+        </div>
+
+        <div class="parallax-element" data-speed="-0.05">
+          <div class="hero-image-wrap fade-up">
+            <img src="Rude.jpeg" alt="Udsigt fra vinduet" />
+          </div>
+        </div>
+      </div>
+
+      <div class="prices-row fade-up" style="margin-top: 40px; gap: 30px;">
+        <div class="price-card">
+          <div class="price-card-info">
+            <p class="price-card-label">Træningsklient session</p>
+            <p class="price-card-sub">75 minutter</p>
+          </div>
+          <div class="price-amount">300 kr.</div>
+        </div>
+
+        <div class="price-card featured">
+          <div class="price-card-info">
+            <p class="price-card-label">Uforpligtende samtale</p>
+            <p class="price-card-sub">15 minutter — telefonisk</p>
+          </div>
+          <div class="price-amount">Gratis</div>
+        </div>
+      </div>
+
+      <p class="prices-note fade-up">
+        Online terapi er en mulighed.<br />
+        NB. Jeg har en venlig og rolig hund i huset.
+      </p>
+    </div>
+  </section>
+
+<section id="faglige-rammer" style="background: var(--cream); padding: 80px 0;">
+  <div class="container">
+    <span class="section-label">ETIK & RAMMER</span>
+    <h2 class="section-title">Tavshedspligt og professionelle rammer</h2>
+    <div class="services-grid" style="margin-top: 32px;">
+      
+      <div class="service-card fade-up" style="display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--white); border: 1px solid var(--beige);">
+        <h3 style="color: var(--sage-dark); margin-bottom: 16px; font-size: 1.6rem;">Tavshedspligt</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6;">
+          Som psykoterapeutstuderende har jeg tavshedspligt. Det, du deler med mig, forbliver mellem os.
+        </p>
+      </div>
+
+      <div class="service-card fade-up" style="display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--white); border: 1px solid var(--beige);">
+        <h3 style="color: var(--sage-dark); margin-bottom: 16px; font-size: 1.6rem;">Supervision</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6;">
+          Jeg indgår i fortsat supervision med undervisere fra Vadum Dahl Instituttet, hvilket sikrer kvaliteten i vores arbejde.
+        </p>
+      </div>
+
+      <div class="service-card fade-up" style="display: flex; flex-direction: column; align-items: center; text-align: center; background: var(--white); border: 1px solid var(--beige);">
+        <h3 style="color: var(--sage-dark); margin-bottom: 16px; font-size: 1.6rem;">Fagligt medlemskab</h3>
+        <p style="font-size: 0.95rem; line-height: 1.6;">
+          Jeg er medlem af Dansk Psykoterapeutforening og arbejder inden for foreningens etiske retningslinjer.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <section id="kontakt">
+    <div class="container">
+      <span class="section-label">Kontakt</span>
+      <div class="contact-grid" style="margin-top: 24px;">
+        <div class="fade-up">
+          <h2 class="section-title">Tag det første skridt</h2>
+          <p>Du er velkommen til at skrive, hvis du har spørgsmål eller ønsker en indledende samtale. Jeg svarer typisk inden for 1-2 hverdage.</p>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div><p style="font-size:.8rem; opacity:.7;">TELEFON</p><strong>+45 2285 0376</strong></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div><p style="font-size:.8rem; opacity:.7;">EMAIL</p><strong>dramalotte@gmail.com</strong></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div><p style="font-size:.8rem; opacity:.7;">ADRESSE</p><strong>Nordtoft 47<br>9000 Aalborg</strong></div>
+          </div>
+        </div>
+        <!-- <div class="parallax-element" data-speed="-0.08">
+          <div class="hero-image-wrap fade-in-slow">
+            <img src="Blomst.jpg" alt="Kontakt" />
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p style="font-family:'Cormorant Garamond',serif; font-size:1.8rem;">Lotte Damsgaard Mortensen</p>
+      <ul class="footer-links">
+        <li><a href="#terapi">Tilgang</a></li>
+        <li><a href="#om-mig">Om mig</a></li>
+        <li><a href="#praktisk">Praktisk</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <p style="opacity:0.4; font-size:0.75rem; margin-top:20px;">© 2026 Alle rettigheder forbeholdes.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    const indicator = document.getElementById('nav-indicator');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = document.querySelectorAll('section');
+
+    function moveIndicator(link) {
+      if (link) {
+        indicator.style.width = `${link.offsetWidth}px`;
+        indicator.style.left = `${link.offsetLeft}px`;
+        indicator.style.opacity = '1';
+      } else {
+        indicator.style.opacity = '0';
+      }
+    }
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 20) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+
+      let currentId = "";
+      sections.forEach(section => {
+        const top = section.offsetTop;
+        if (window.scrollY >= top - 200) currentId = section.getAttribute('id');
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentId}`) {
+          link.classList.add('active');
+          moveIndicator(link);
+        }
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in-focus');
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up, .fade-in-slow').forEach(el => observer.observe(el));
+
+    window.addEventListener('scroll', () => {
+      const windowCenter = window.innerHeight / 2;
+      document.querySelectorAll('.parallax-img').forEach(img => {
+        const rect = img.parentElement.getBoundingClientRect();
+        const offset = (rect.top + rect.height / 2) - windowCenter;
+        img.style.transform = `scale(1.15) translateY(${-offset * (img.dataset.speed || 0.05)}px)`;
+      });
+      document.querySelectorAll('.parallax-element').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        const offset = (rect.top + rect.height / 2) - windowCenter;
+        el.style.transform = `translateY(${-offset * (el.dataset.speed || 0.05)}px)`;
+      });
+    }, { passive: true });
+
+    const burger = document.getElementById('burger-btn');
+    const menu = document.getElementById('mobile-menu');
+    const close = document.getElementById('mobile-close');
+    burger.onclick = () => { menu.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    close.onclick = () => { menu.classList.remove('open'); document.body.style.overflow = ''; }
+  </script>
+</body>
+</html>
     </div>
   </section>
 
