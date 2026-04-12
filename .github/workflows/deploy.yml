@@ -23,6 +23,9 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ./public_html/
           protocol: ftp
+          # Add these to stabilize connection
+          port: 21
+          timeout: 90000
 
       - name: 📤 Sync to Staging (Dev)
         if: github.ref == 'refs/heads/dev'
@@ -31,5 +34,9 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ./dev/  # Matches the folder in your screenshot
+          server-dir: ./dev/
           protocol: ftp
+          # Add these to fix the ECONNRESET
+          port: 21
+          timeout: 90000
+          state-name: .dev-sync-state.json # Keeps dev/main sync logs separate
