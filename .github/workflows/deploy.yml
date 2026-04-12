@@ -9,12 +9,11 @@ jobs:
   web-deploy:
     name: 📂 FTP Sync
     runs-on: ubuntu-latest
-    
     steps:
       - name: 🚚 Checkout Code
         uses: actions/checkout@v4
 
-      - name: 📤 Sync Files to public_html
+      - name: 📤 Sync Files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
@@ -23,3 +22,7 @@ jobs:
           server-dir: ./public_html/
           protocol: ftp
           port: 21
+          # These three lines often fix the ECONNRESET error:
+          dangerous-clean-slate: false
+          timeout: 60000
+          log-level: verbose
