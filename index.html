@@ -16,9 +16,9 @@
       --cream:        #FAF8F5;
       --beige:        #EDE6DC;
       --beige-mid:    #D9CFBF;
-      --sage:         #7C9E8A;
+      --sage:          #7C9E8A;
       --sage-light:   #C9DDD3;
-      --sage-dark:    #5A7D6A;
+      --sage-dark:     #5A7D6A;
       --brown:        #2D2723;
       --brown-mid:    #4A423E;
       --brown-light:  #8C7E75;
@@ -91,7 +91,7 @@
     .parallax-img { transform: scale(1.15); will-change: transform; }
     .parallax-element { will-change: transform; }
 
-    /* ─── Navigation (FIXED & ANIMATED) ─── */
+    /* ─── Navigation ─── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -175,7 +175,16 @@
     .burger span { display: block; width: 24px; height: 2px; background: var(--brown); margin: 5px 0;}
 
     /* ─── Layout Components ─── */
-    .section-label { display: inline-block; font-size: .75rem; font-weight: 500; letter-spacing: .15em; text-transform: uppercase; color: var(--sage-dark); margin-bottom: 16px; }
+    .section-label { 
+        display: block; 
+        text-align: left; 
+        font-size: .75rem; 
+        font-weight: 500; 
+        letter-spacing: .15em; 
+        text-transform: uppercase; 
+        color: var(--sage-dark); 
+        margin-bottom: 16px; 
+    }
     .section-title { font-size: clamp(2.2rem, 5vw, 3.2rem); color: var(--brown); margin-bottom: 24px; }
     .section-intro { font-size: 1.05rem; color: var(--brown); max-width: 600px; line-height: 1.8; margin-bottom: 30px; }
 
@@ -200,69 +209,53 @@
 
     /* ─── Tilgang ─── */
     #terapi { background: var(--white); }
-    .terapi-feature { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; margin-bottom: 80px; }
+    .terapi-feature { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: start; }
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
     .service-card { background: var(--cream); padding: 40px; border-radius: var(--radius-md); border: 1px solid var(--beige); transition: .3s; }
     .service-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card); }
 
-    /* ─── MERGED QUOTE SECTION ─── */
-/* ─── FIXED QUOTE SECTION ─── */
-/* --- Navigation Indicator --- */
-#nav-indicator {
-  position: absolute;
-  bottom: -4px;
-  height: 2px;
-  background: var(--sage-dark);
-  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-  pointer-events: none;
-  opacity: 0;
-  z-index: 10;
-}
+    /* --- Fixed Quote Section --- */
+    #citat {
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #000;
+    }
 
-/* --- Fixed Quote Section --- */
-#citat {
-  position: relative;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: #000; /* Backstop to keep text contrast high */
-}
+    #citat .parallax-img {
+      position: absolute;
+      top: -10%; left: 0; width: 100%; height: 120%;
+      object-fit: cover;
+      z-index: 1;
+      opacity: 0.6;
+    }
 
-#citat .parallax-img {
-  position: absolute;
-  top: -10%; left: 0; width: 100%; height: 120%;
-  object-fit: cover;
-  z-index: 1; /* Bottom Layer */
-  opacity: 0.6; /* Dims the photo so white text pops */
-}
+    .image-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
 
-.image-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3); /* Middle Layer: Tint */
-  z-index: 2;
-}
+    #citat .container {
+      position: relative;
+      z-index: 5;
+      text-align: center;
+      color: #FFFFFF !important;
+    }
 
-#citat .container {
-  position: relative;
-  z-index: 5; /* Top Layer: Forces text above the tint */
-  text-align: center;
-  color: #FFFFFF !important; /* Pure white */
-}
+    .citat-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.3;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    }
 
-.citat-quote {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.3;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.6); /* Adds "pop" against the photo */
-}
-
-    #citat .container { position: relative; z-index: 3; color: var(--white); }
-    .citat-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.8rem, 4vw, 2.8rem); margin-bottom: 24px; line-height: 1.4; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-    .citat-author { font-size: 1.1rem; opacity: 0.9; letter-spacing: .05em; }
+    .citat-author { font-size: 1.1rem; opacity: 0.9; letter-spacing: .05em; margin-top: 15px; }
 
     /* ─── Om Mig ─── */
     .about-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: start; }
@@ -292,7 +285,8 @@
       .burger { display: block; }
       .hero-grid, .terapi-feature, .about-inner, .praktisk-grid, .contact-grid { grid-template-columns: 1fr; }
       .services-grid { grid-template-columns: 1fr; }
-      .hero-image-wrap { order: -1; }
+      .hero-image-wrap { order: 2; }
+      .hero-label-anchor { order: 1; }
     }
   </style>
 </head>
@@ -328,7 +322,7 @@
   <section id="hjem">
     <div class="container hero-grid">
       <div class="fade-up in-focus">
-        <span class="section-label">Psykoterapeut under uddannelse</span>
+        <span class="section-label">TILBYDER Psykoterapeut under uddannelse</span>
         <h1 class="hero-title">Samtaler i et kærligt og anerkendende rum</h1>
         <p class="section-intro">Måske mærker du, at det er tid til at lytte til din krop og dit sind? Gennem nærværende samtale skaber vi et rum til forandring.</p>
         <ul class="hero-list">
@@ -338,23 +332,25 @@
         </ul>
         <a href="#kontakt" class="btn-primary" style="padding: 16px 40px;">Bestil en uforpligtende samtale</a>
       </div>
-        <div class="parallax-element" data-speed="-0.1">
-          <div class="hero-image-wrap fade-in-slow in-focus">
-            <img src="Blomst.jpg" alt="Terapi" />
-          </div>
+      <div class="parallax-element" data-speed="-0.1">
+        <div class="hero-image-wrap fade-in-slow in-focus">
+          <img src="Blomst.jpg" alt="Terapi" />
         </div>
+      </div>
     </div>
   </section>
 
   <section id="terapi">
     <div class="container">
-      <div class="terapi-feature" style="margin-bottom: 0; align-items: start;">
-        <div class="hero-image-wrap fade-up">
-          <img src="Sti.JPG" alt="Stien videre" />
+      <div class="terapi-feature">
+        <div class="parallax-element" data-speed="-0.05">
+          <span class="section-label">Tilgang & Metode</span>
+          <div class="hero-image-wrap fade-up">
+            <img src="Sti.JPG" alt="Stien videre" />
+          </div>
         </div>
         <div>
           <div class="fade-up delay-1">
-            <span class="section-label">Tilgang & Metode</span>
             <h2 class="section-title">Hvad kan du forvente af forløbet?</h2>
             <p class="section-intro">Gennem samtalen kan du tage ansvar for dig selv på en selvkærlig måde og skabe mere energi og glæde i hverdagen.</p>
           </div>
@@ -364,18 +360,15 @@
               <h3 style="font-size: 1.6rem; margin-bottom: 6px; color: var(--sage-dark);">Integral tilgang</h3>
               <p style="font-size: 1.05rem; line-height: 1.6; margin: 0;">Jeg kombinerer psykodynamiske, kognitive og humanistiske tilgange tilpasset dig.</p>
             </div>
-            
             <div class="fade-up delay-2">
               <h3 style="font-size: 1.6rem; margin-bottom: 6px; color: var(--sage-dark);">Enneagrammet</h3>
               <p style="font-size: 1.05rem; line-height: 1.6; margin: 0;">Et redskab til at forstå din personlighed og de motivationsmønstre, der driver dig.</p>
             </div>
-            
             <div class="fade-up delay-3">
               <h3 style="font-size: 1.6rem; margin-bottom: 6px; color: var(--sage-dark);">Anerkendende rum</h3>
               <p style="font-size: 1.05rem; line-height: 1.6; margin: 0;">Her er alt velkomment. Jeg bevidner din historie med nærvær og uden dom.</p>
             </div>
           </div>
-          
         </div>
       </div>
     </div>
@@ -393,7 +386,6 @@
   <section id="om-mig">
     <div class="container about-inner">
       <div class="fade-up">
-        <span class="section-label">Om mig</span>
         <h2 class="section-title">Erfaring, hjerte & det hele menneske</h2>
         <div class="about-card">
           <p><strong>Faglig baggrund</strong></p>
@@ -405,6 +397,7 @@
         </div>
       </div>
       <div class="parallax-element" data-speed="-0.06">
+        <span class="section-label">Om mig</span>
         <div class="hero-image-wrap fade-up delay-1">
           <img src="Profil.jpeg" alt="Lotte" />
         </div>
@@ -414,22 +407,22 @@
 
   <section id="praktisk">
     <div class="container">
-      <div class="fade-up" style="text-align: left; margin-bottom: 60px;">
-        <span class="section-label">Priser & Rammer</span>
-        <h2 class="section-title">Enkelt og gennemsigtigt</h2>
-      </div>
       <div class="praktisk-grid">
-        <div class="price-cards">
-          <div class="price-card featured fade-up">
-            <div><p>Uforpligtende samtale</p><small>15 minutter</small></div>
-            <div class="price-amount">Gratis</div>
-          </div>
-          <div class="price-card fade-up delay-1">
-            <div><p>Træningsklient session</p><small>75 minutter</small></div>
-            <div class="price-amount">300 kr.</div>
+        <div class="fade-up">
+          <span class="section-label">Priser & Rammer</span>
+          <h2 class="section-title">Enkelt og gennemsigtigt</h2>
+          <div class="price-cards">
+            <div class="price-card featured fade-up">
+              <div><p>Uforpligtende samtale</p><small>15 minutter</small></div>
+              <div class="price-amount">Gratis</div>
+            </div>
+            <div class="price-card fade-up delay-1">
+              <div><p>Træningsklient session</p><small>75 minutter</small></div>
+              <div class="price-amount">300 kr.</div>
+            </div>
           </div>
         </div>
-        <div class="about-card fade-up delay-2" style="background: var(--beige); margin:0;">
+        <div class="about-card fade-up delay-2" style="background: var(--beige); margin-top: 54px;">
           <h3 style="margin-bottom:15px;">Lokation</h3>
           <p>Nordtoft 47, 9000 Aalborg. Online terapi er også en mulighed.</p>
           <p style="margin-top:10px;"><strong>Bemærk:</strong> Der er en rolig hund i huset.</p>
@@ -513,13 +506,10 @@
       }
     }
 
-    // Scroll Logic: Sticky Nav & Active Underline
     window.addEventListener('scroll', () => {
-      // Nav Shadow
       if (window.scrollY > 20) nav.classList.add('scrolled');
       else nav.classList.remove('scrolled');
 
-      // Active Section Detection
       let currentId = "";
       sections.forEach(section => {
         const top = section.offsetTop;
@@ -537,28 +527,24 @@
         }
       });
 
-      // Hide indicator if at very top
       if (window.scrollY < 300) {
         navLinks.forEach(l => l.classList.remove('active'));
         moveIndicator(null);
       }
     });
 
-    // Fade Animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) entry.target.classList.add('in-focus');
-        else entry.target.classList.remove('in-focus'); // Optional: fade out when leaving
+        else entry.target.classList.remove('in-focus');
       });
     }, { threshold: 0.1, rootMargin: '-10% 0px -10% 0px' });
 
     document.querySelectorAll('.fade-up, .fade-in-slow').forEach(el => observer.observe(el));
 
-    // Simple Parallax
     window.addEventListener('scroll', () => {
       const windowCenter = window.innerHeight / 2;
       
-      // 1. Background Parallax (image moves inside a full-width container like #citat)
       document.querySelectorAll('.parallax-img').forEach(img => {
         const rect = img.parentElement.getBoundingClientRect();
         const elementCenter = rect.top + rect.height / 2;
@@ -567,7 +553,6 @@
         img.style.transform = `scale(1.15) translateY(${-offset * speed}px)`;
       });
 
-      // 2. Element Parallax (the entire element floats gracefully)
       document.querySelectorAll('.parallax-element').forEach(el => {
         const currentY = parseFloat(el.style.transform.replace('translateY(', '').replace('px)', '')) || 0;
         const rect = el.getBoundingClientRect();
@@ -578,7 +563,6 @@
       });
     }, { passive: true });
 
-    // Mobile Menu
     const burger = document.getElementById('burger-btn');
     const menu = document.getElementById('mobile-menu');
     const close = document.getElementById('mobile-close');
@@ -590,7 +574,6 @@
       document.body.style.overflow = '';
     });
     
-    // Initial call to set state
     window.dispatchEvent(new Event('scroll'));
   </script>
 </body>
