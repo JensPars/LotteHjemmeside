@@ -260,7 +260,7 @@
     .about-card { background: var(--white); border-radius: var(--radius-md); padding: 32px; border: 1px solid var(--beige); margin-bottom: 20px; }
     .about-inner { align-items: stretch; } /* Ensure left column matches image height */
     
-    .profil-img { object-position: center 20%; } /* Issue #30: Better mobile framing */
+    .profil-img { object-position: center 15%; } /* Issue #30: Better mobile framing to avoid cutting head */
 
     /* ─── Praktisk ─── */
     .prices-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 40px; }
@@ -281,7 +281,7 @@
     .price-card-label { font-weight: 500; font-size: 1.1rem; }
     .price-card-sub { font-size: 0.85rem; opacity: 0.8; }
     .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; white-space: nowrap; margin-left: 20px; }
-    .prices-note { margin-top: 20px; text-align: left; opacity: 0.8; font-style: italic; }
+    .prices-note { margin-top: 20px; text-align: left; opacity: 0.9; } /* Issue #31: matched font style */
 
     /* ─── Etik & Kontakt ─── */
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
@@ -324,7 +324,7 @@
 
   <nav id="main-nav">
     <div class="container nav-inner">
-      <a href="#hjem" class="nav-logo"><strong>Lotte Damsgaard Mortensen</strong></a>
+      <a href="#hjem" class="nav-logo" id="nav-logo"><strong>Lotte Damsgaard Mortensen</strong></a>
       <ul class="nav-links">
         <div class="nav-indicator" id="nav-indicator"></div>
         <li><a href="#terapi">TILGANG & METODE</a></li>
@@ -345,16 +345,18 @@
     <a href="#terapi" class="mobile-link" style="font-size: 2rem;">Tilgang & Metode</a>
     <a href="#om-mig" class="mobile-link" style="font-size: 2rem;">Om mig</a>
     <a href="#praktisk" class="mobile-link" style="font-size: 2rem;">Praktisk</a>
+    <a href="#etik" class="mobile-link" style="font-size: 2rem;">Etik & Rammer</a>
     <a href="#kontakt" class="mobile-link" style="font-size: 2rem; color: var(--sage);">Kontakt</a>
   </div>
 
   <section id="hjem">
     <div class="container hero-grid">
       <div class="fade-up in-focus">
-        <h1 class="hero-title">Lotte Damsgaard Mortensen</h1>
-        <img src="hjerte.png" alt="Hjerte" style="width: 30px; height: auto; margin: 10px 0;" />
-        <span class="section-label" style="margin-bottom: 24px;">Psykoterapeut under uddannelse tilbyder</span>
-        <h2 style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 24px;">Samtaler i et kærligt og anerkendende rum</h2>
+        <div style="text-align: center; margin-bottom: 24px;">
+          <img src="hjerte.png" alt="Hjerte" style="width: 40px; height: auto; margin: 0 auto 10px auto;" />
+          <span class="section-label" style="text-align: center;">Psykoterapeut under uddannelse tilbyder</span>
+        </div>
+        <h2 style="font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.2; margin-bottom: 24px;">Samtaler i et kærligt og anerkendende rum</h2>
         <p class="section-intro">Måske genkender du noget af dette:</p>
         <ul class="hero-list">
           <li>at have en fornemmelse af, at du er skabt til mere liv end det, du udlever?</li>
@@ -443,8 +445,8 @@
   </section>
 
   <section id="citat">
-    <img src="Nydning.JPG" alt="Ro" class="parallax-img fade-in-slow" data-speed="-0.15" />
-    <div class="image-overlay"></div>
+    <img src="Nydning.JPG" alt="Ro" class="parallax-img fade-in-slow" data-speed="-0.15" style="opacity: 0.8;" />
+    <div class="image-overlay" style="background: rgba(0, 0, 0, 0.25);"></div>
     <div class="container fade-up in-focus">
       <p class="citat-quote">"Ved at sige tanker højt, ved at flytte en erindring fra vores eget indre over til et andet menneske kan den få lov at findes i verden — og sammen kan vi gøre noget ved det."</p>
       <p class="citat-author">— Michel Foucault</p>
@@ -484,7 +486,7 @@
         </p>
       </div>
 
-      <div class="prices-row">
+      <div class="prices-row" style="align-items: flex-start;">
         <div class="prices-aside fade-up">
           <h3>Sådan kommer vi i gang</h3>
           <p>Kontakt mig i første omgang på mail eller sms for en aftale om en 15 minutters uforpligtende telefonsamtale.</p>
@@ -518,7 +520,8 @@
       </div>
 
       <p class="prices-note fade-up">
-        Samtalerne foregår på adressen: <strong>Nordtoft 47, 9000 Aalborg</strong>.<br />
+        Samtalerne foregår på adressen:<br />
+        Nordtoft 47, 9000 Aalborg.<br />
         Online terapi er en mulighed.<br />
         NB. Jeg har en venlig og rolig hund i huset.
       </p>
@@ -561,12 +564,14 @@
       <span class="section-label">Kontakt</span>
       <div class="contact-grid" style="margin-top: 24px;">
         <div class="fade-up">
-          <div style="display: flex; align-items: center; gap: 30px;">
-            <div>
+          <div style="display: flex; align-items: center; gap: 40px; justify-content: space-between;">
+            <div style="flex: 1;">
               <h2 class="section-title">Tag det første skridt</h2>
               <p>Du er velkommen til at skrive, hvis du har spørgsmål eller ønsker en indledende samtale. Jeg svarer typisk inden for 1-2 hverdage.</p>
             </div>
-            <img src="hjerte.png" alt="Hjerte" style="width: 80px; height: auto; opacity: 0.8;" />
+            <div style="flex: 0 0 150px; display: flex; justify-content: flex-end;">
+              <img src="Hjerte.JPG" alt="Hjerte ved stranden" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--white); box-shadow: var(--shadow-card);" />
+            </div>
           </div>
           <div class="contact-item" style="margin-top: 30px;">
             <div class="contact-icon">📞</div>
@@ -602,6 +607,7 @@
     const nav = document.getElementById('main-nav');
     const indicator = document.getElementById('nav-indicator');
     const navLinks = document.querySelectorAll('.nav-links a');
+    const navLogo = document.getElementById('nav-logo');
     const sections = document.querySelectorAll('section');
 
     function moveIndicator(link) {
@@ -620,7 +626,7 @@
 
       let currentId = "";
       if (window.scrollY < 200) {
-        currentId = "terapi"; 
+        currentId = "hjem"; 
       } else {
         sections.forEach(section => {
           const top = section.offsetTop;
@@ -635,6 +641,13 @@
           moveIndicator(link);
         }
       });
+
+      if (currentId === "hjem") {
+        moveIndicator(navLogo);
+        navLogo.style.color = "var(--sage-dark)";
+      } else {
+        navLogo.style.color = "";
+      }
     });
 
     const observer = new IntersectionObserver((entries) => {
@@ -662,8 +675,17 @@
     const burger = document.getElementById('burger-btn');
     const menu = document.getElementById('mobile-menu');
     const close = document.getElementById('mobile-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
     burger.onclick = () => { menu.classList.add('open'); document.body.style.overflow = 'hidden'; }
     close.onclick = () => { menu.classList.remove('open'); document.body.style.overflow = ''; }
+    
+    mobileLinks.forEach(link => {
+      link.onclick = () => {
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
 
     function toggleExpand(id) {
       const content = document.getElementById(id);
