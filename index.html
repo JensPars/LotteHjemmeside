@@ -321,6 +321,7 @@
     }
 
     @media (max-width: 950px) {
+      #hjem { padding-top: 100px; } /* Move flower up */
       .nav-links, .nav-cta { display: none; }
       .burger { display: block; }
       .hero-grid, .terapi-feature, .about-inner, .prices-row, .contact-grid { grid-template-columns: 1fr; }
@@ -401,12 +402,12 @@
         </p>
       </div>
       <div class="parallax-element" data-speed="-0.1">
-        <div class="hero-image-wrap fade-in-slow in-focus">
+        <div class="hero-image-wrap fade-in-slow in-focus hide-mobile">
           <!-- Issue #34: Swap Blomst with Hjerte on mobile -->
-          <img src="Blomst.jpg" alt="Terapi" class="hide-mobile" />
-          <div class="show-mobile" style="background: var(--white); height: 100%; display: flex; align-items: center; justify-content: center;">
-            <img src="hjerte.png" alt="Hjerte" style="width: 60px; height: auto;" />
-          </div>
+          <img src="Blomst.jpg" alt="Terapi" />
+        </div>
+        <div class="show-mobile fade-in-slow in-focus" style="text-align: center; margin-bottom: 20px;">
+          <img src="hjerte.png" alt="Hjerte" style="width: 60px; height: auto;" />
         </div>
         <div class="about-card fade-up" style="margin-top: 20px;">
           <h3 style="font-size: 1.2rem; color: var(--sage-dark); margin-bottom: 5px;">Hvad betyder psykoterapi? <button class="expand-btn" onclick="toggleExpand('psyke-text')">+ Læs mere</button></h3>
