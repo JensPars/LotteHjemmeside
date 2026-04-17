@@ -321,7 +321,7 @@
     }
 
     @media (max-width: 950px) {
-      #hjem { padding-top: 100px; } /* Move flower up */
+      #hjem { padding-top: 80px; } /* Move flower closer to nav */
       .nav-links, .nav-cta { display: none; }
       .burger { display: block; }
       .hero-grid, .terapi-feature, .about-inner, .prices-row, .contact-grid { grid-template-columns: 1fr; }
@@ -400,14 +400,16 @@
           Er du kommet dertil, at du nu skal reagere på de signaler, din krop og dit sind sender dig?
           Gennem samtalen kan du tage ansvar for dig selv på en selvkærlig måde og skabe mere energi og kærlighed i og omkring dig.
         </p>
+
+        <!-- Issue #34: Heart at bottom of text on mobile -->
+        <div class="show-mobile fade-up" style="text-align: center; margin-top: 40px;">
+          <img src="hjerte.png" alt="Hjerte" style="width: 60px; height: auto; opacity: 0.8;" />
+        </div>
       </div>
       <div class="parallax-element" data-speed="-0.1">
         <div class="hero-image-wrap fade-in-slow in-focus hide-mobile">
           <!-- Issue #34: Swap Blomst with Hjerte on mobile -->
           <img src="Blomst.jpg" alt="Terapi" />
-        </div>
-        <div class="show-mobile fade-in-slow in-focus" style="text-align: center; margin-bottom: 20px;">
-          <img src="hjerte.png" alt="Hjerte" style="width: 60px; height: auto;" />
         </div>
         <div class="about-card fade-up" style="margin-top: 20px;">
           <h3 style="font-size: 1.2rem; color: var(--sage-dark); margin-bottom: 5px;">Hvad betyder psykoterapi? <button class="expand-btn" onclick="toggleExpand('psyke-text')">+ Læs mere</button></h3>
