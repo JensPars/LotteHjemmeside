@@ -192,6 +192,16 @@
       background: var(--beige); /* Fallback background */
     }
 
+    .profil-img-wrap {
+      aspect-ratio: 4/5;
+    }
+
+    @media (max-width: 950px) {
+      .profil-img-wrap {
+        aspect-ratio: 3/4; /* Issue #30: Portrait ratio on mobile */
+      }
+    }
+
     /* ─── Hero ─── */
     #hjem {
       padding: 180px 0 100px;
@@ -264,7 +274,7 @@
 
     /* ─── Praktisk ─── */
     .prices-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 40px; }
-    .prices-aside h3 { font-size: 1.8rem; color: var(--sage-dark); margin-bottom: 15px; }
+    .prices-aside h3 { font-size: 1.8rem; color: var(--sage-dark); margin-bottom: 0px; } /* Issue #26: remove margin for alignment */
     .prices-aside p { margin-bottom: 20px; }
     
     .price-card { 
@@ -352,11 +362,11 @@
   <section id="hjem">
     <div class="container hero-grid">
       <div class="fade-up in-focus">
-        <div style="text-align: center; margin-bottom: 24px;">
-          <img src="hjerte.png" alt="Hjerte" style="width: 40px; height: auto; margin: 0 auto 10px auto;" />
-          <span class="section-label" style="text-align: center;">Psykoterapeut under uddannelse tilbyder</span>
+        <div style="text-align: left; margin-bottom: 24px;">
+          <img src="hjerte.png" alt="Hjerte" style="width: 40px; height: auto; margin: 0 0 10px 0;" />
+          <span class="section-label" style="text-align: left;">Psykoterapeut under uddannelse tilbyder</span>
         </div>
-        <h2 style="font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.2; margin-bottom: 24px;">Samtaler i et kærligt og anerkendende rum</h2>
+        <h2 style="font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.2; margin-bottom: 24px; text-align: left;">Samtaler i et kærligt og anerkendende rum</h2>
         <p class="section-intro">Måske genkender du noget af dette:</p>
         <ul class="hero-list">
           <li>at have en fornemmelse af, at du er skabt til mere liv end det, du udlever?</li>
@@ -468,7 +478,7 @@
           </div>
         </div>
         <div class="parallax-element" data-speed="-0.06">
-          <div class="hero-image-wrap fade-up">
+          <div class="hero-image-wrap profil-img-wrap fade-up">
             <img src="Profil.jpeg" alt="Lotte" class="profil-img" />
           </div>
         </div>
@@ -478,16 +488,14 @@
 
   <section id="praktisk" style="background: var(--white);">
     <div class="container">
-      <span class="section-label">Praktisk info</span>
-      <div class="prices-content fade-up" style="margin-top: 24px;">
-        <h2 class="section-title">Enkelt og gennemsigtigt</h2>
-        <p class="section-intro">
-          Alt det praktiske du har brug for at vide, inden vi mødes.
-        </p>
-      </div>
-
       <div class="prices-row" style="align-items: flex-start;">
         <div class="prices-aside fade-up">
+          <span class="section-label">Praktisk info</span>
+          <h2 class="section-title">Enkelt og gennemsigtigt</h2>
+          <p class="section-intro">
+            Alt det praktiske du har brug for at vide, inden vi mødes.
+          </p>
+
           <h3>Sådan kommer vi i gang</h3>
           <p>Kontakt mig i første omgang på mail eller sms for en aftale om en 15 minutters uforpligtende telefonsamtale.</p>
           
@@ -564,15 +572,13 @@
       <span class="section-label">Kontakt</span>
       <div class="contact-grid" style="margin-top: 24px;">
         <div class="fade-up">
-          <div style="display: flex; align-items: center; gap: 40px; justify-content: space-between;">
-            <div style="flex: 1;">
-              <h2 class="section-title">Tag det første skridt</h2>
-              <p>Du er velkommen til at skrive, hvis du har spørgsmål eller ønsker en indledende samtale. Jeg svarer typisk inden for 1-2 hverdage.</p>
-            </div>
-            <div style="flex: 0 0 150px; display: flex; justify-content: flex-end;">
-              <img src="Hjerte.JPG" alt="Hjerte ved stranden" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--white); box-shadow: var(--shadow-card);" />
-            </div>
+          <h2 class="section-title" style="margin-bottom: 20px;">Tag det første skridt</h2>
+          
+          <div style="margin: 24px 0; border-radius: var(--radius-md); overflow: hidden; height: 280px; box-shadow: var(--shadow-card);">
+            <img src="Hjerte.JPG" alt="Hjerte ved stranden" style="width: 100%; height: 100%; object-fit: cover;" />
           </div>
+
+          <p style="margin-top: 24px;">Du er velkommen til at skrive, hvis du har spørgsmål eller ønsker en indledende samtale. Jeg svarer typisk inden for 1-2 hverdage.</p>
           <div class="contact-item" style="margin-top: 30px;">
             <div class="contact-icon">📞</div>
             <div><p style="font-size:.8rem; opacity:.7;">TELEFON</p><strong>+45 22 85 03 76</strong></div>
@@ -643,7 +649,8 @@
       });
 
       if (currentId === "hjem") {
-        moveIndicator(navLogo);
+        indicator.style.width = `0px`;
+        indicator.style.opacity = '0';
         navLogo.style.color = "var(--sage-dark)";
       } else {
         navLogo.style.color = "";
