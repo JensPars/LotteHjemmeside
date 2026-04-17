@@ -327,7 +327,19 @@
       .services-grid { grid-template-columns: 1fr; }
       .hero-image-wrap { aspect-ratio: 16/10; order: 2; }
       .profil-img-wrap { aspect-ratio: 3/4; } /* Force portrait for profile */
+
+      /* Issue #34: Swap hjerte and blomst on mobile */
+      .hide-mobile { display: none !important; }
+      .show-mobile { display: block !important; }
+      .hero-blomst-mobile-wrap { 
+        border-radius: var(--radius-lg); 
+        overflow: hidden; 
+        margin-bottom: 24px;
+        aspect-ratio: 16/10;
+      }
     }
+
+    .show-mobile { display: none; }
   </style>
 </head>
 
@@ -364,7 +376,13 @@
     <div class="container hero-grid">
       <div class="fade-up in-focus">
         <div style="text-align: left; margin-bottom: 24px;">
-          <img src="hjerte.png" alt="Hjerte" style="width: 40px; height: auto; margin: 0 0 10px 0;" />
+          <img src="hjerte.png" alt="Hjerte" class="hide-mobile" style="width: 40px; height: auto; margin: 0 0 10px 0;" />
+          
+          <!-- Issue #34: Blomst at top on mobile -->
+          <div class="hero-blomst-mobile-wrap show-mobile">
+            <img src="Blomst.jpg" alt="Terapi" />
+          </div>
+
           <span class="section-label" style="text-align: left;">Psykoterapeut under uddannelse tilbyder</span>
         </div>
         <h2 style="font-size: clamp(2rem, 4.5vw, 2.8rem); line-height: 1.2; margin-bottom: 24px; text-align: left;">Samtaler i et kærligt og anerkendende rum</h2>
@@ -384,7 +402,11 @@
       </div>
       <div class="parallax-element" data-speed="-0.1">
         <div class="hero-image-wrap fade-in-slow in-focus">
-          <img src="Blomst.jpg" alt="Terapi" />
+          <!-- Issue #34: Swap Blomst with Hjerte on mobile -->
+          <img src="Blomst.jpg" alt="Terapi" class="hide-mobile" />
+          <div class="show-mobile" style="background: var(--white); height: 100%; display: flex; align-items: center; justify-content: center;">
+            <img src="hjerte.png" alt="Hjerte" style="width: 60px; height: auto;" />
+          </div>
         </div>
         <div class="about-card fade-up" style="margin-top: 20px;">
           <h3 style="font-size: 1.2rem; color: var(--sage-dark); margin-bottom: 5px;">Hvad betyder psykoterapi? <button class="expand-btn" onclick="toggleExpand('psyke-text')">+ Læs mere</button></h3>
