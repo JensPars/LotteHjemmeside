@@ -288,7 +288,8 @@
     .profil-img { object-position: center 15%; } /* Issue #30: Better mobile framing to avoid cutting head */
 
     /* ─── Praktisk ─── */
-    .prices-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; margin-bottom: 40px; }
+    .prices-row { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: stretch; margin-bottom: 40px; }
+    .prices-aside { display: flex; flex-direction: column; }
     .prices-aside h3 { font-size: 1.8rem; color: var(--sage-dark); margin-bottom: 0px; } /* Issue #26: remove margin for alignment */
     .prices-aside p { margin-bottom: 20px; }
     
@@ -296,16 +297,16 @@
       display: flex; 
       justify-content: space-between; 
       align-items: center; 
-      padding: 30px; 
+      padding: 20px; 
       background: var(--white); 
       border-radius: var(--radius-md); 
       border: 1px solid var(--beige); 
       transition: .3s; 
     }
     .price-card.featured { background: var(--sage); color: var(--white); border-color: var(--sage); }
-    .price-card-label { font-weight: 500; font-size: 1.1rem; }
-    .price-card-sub { font-size: 0.85rem; opacity: 0.8; }
-    .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; white-space: nowrap; margin-left: 20px; }
+    .price-card-label { font-weight: 500; font-size: 1rem; }
+    .price-card-sub { font-size: 0.8rem; opacity: 0.8; }
+    .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; white-space: nowrap; margin-left: 20px; }
     .prices-note { margin-top: 20px; text-align: left; opacity: 0.9; } /* Issue #31: matched font style */
 
     /* ─── Etik & Kontakt ─── */
@@ -534,7 +535,7 @@
   <section id="praktisk" style="background: var(--white);">
     <div class="container">
       <span class="section-label">Praktisk info</span>
-      <div class="prices-row" style="align-items: flex-start; margin-top: 24px;">
+      <div class="prices-row" style="margin-top: 24px;">
         <div class="prices-aside fade-up">
           <h2 class="section-title">Enkelt og gennemsigtigt</h2>
           <p class="section-intro">
@@ -544,7 +545,7 @@
           <h3>Sådan kommer vi i gang</h3>
           <p>Kontakt mig i første omgang på mail eller sms for en aftale om en 15 minutters uforpligtende telefonsamtale.</p>
           
-          <div style="display: flex; flex-direction: column; gap: 20px; margin-top: 30px;">
+          <div style="display: flex; flex-direction: column; gap: 20px; margin-top: auto; padding-top: 30px;">
             <a href="#kontakt" class="btn-primary" style="width: fit-content;">Kontakt mig</a>
             
             <div class="price-card" style="width: 100%;">
