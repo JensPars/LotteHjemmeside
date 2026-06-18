@@ -39,3 +39,14 @@
 ## [x] Issue #3: Check that fonts are standardised
 - [x] Review UI consistency (fonts/colors). (Standardized font sizes and weights across sections)
 - [x] Report any further deviations.
+
+## [x] Issue #50: HEALING 1
+- [x] Text updated under HEALING section.
+- [x] Header changed to "Reiki og chakra healing".
+
+## [x] Issue #51: Text in boxes HEALING
+- [x] Text in Box 2 centered.
+- [x] Four drop-down menus created for the Reiki benefits in Box 2.
+
+## [x] Issue #52: Healing photo
+- [x] Replaced hjerte.png with 243BEE0B-DD8F-415C.png in the three HEALING text boxes.
