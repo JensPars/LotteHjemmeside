@@ -6,6 +6,9 @@ This document outlines the specialized workflow for managing the LotteHjemmeside
 - **Fetch Context:** Always start by identifying the GitHub remote and listing all **open issues**.
 - **Deep Dive:** Fetch the full body and all comments for each issue. Recent comments often contain course corrections that override the original issue description.
 - **Identify Branch:** Perform all work on the `dev` branch. Never push directly to `main` unless explicitly instructed.
+- **Missing Assets:** If an asset (like an image) is mentioned in an issue but not found in the current branch:
+    1. Search for it on other branches in the repository.
+    2. If it is still not found, add a comment on the GitHub issue asking the reporter to provide the missing asset. Do not ask the local CLI operator.
 
 ## 2. Planning
 - **Todo List:** Compile a structured todo list in Markdown. Group tasks by issue number.
