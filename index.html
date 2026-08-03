@@ -346,6 +346,8 @@
       .services-grid { grid-template-columns: 1fr; }
       .hero-image-wrap { aspect-ratio: 16/10; order: 2; }
       .profil-img-wrap { aspect-ratio: 3/4; } /* Force portrait for profile */
+      .healing-img-wrap { aspect-ratio: 1/1; } /* Issue #52: Square ratio for r.jpeg on mobile */
+      .healing-img { object-fit: contain; transform: scale(0.85); } /* Issue #52: Scale down 15% so whole photo with hands is visible */
 
       /* Issue #34: Swap hjerte and blomst on mobile */
       .hide-mobile { display: none !important; }
@@ -546,8 +548,8 @@
       <span class="section-label">HEALING</span>
       <div class="terapi-feature" style="margin-top: 24px; margin-bottom: 40px;">
         <div class="parallax-element" data-speed="-0.05">
-          <div class="hero-image-wrap fade-up">
-            <img src="r.jpeg" alt="Reiki Hænder" />
+          <div class="hero-image-wrap healing-img-wrap fade-up">
+            <img src="r.jpeg" alt="Reiki Hænder" class="healing-img" />
           </div>
         </div>
         <div>
