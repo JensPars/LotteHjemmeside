@@ -308,8 +308,8 @@
       transition: .3s; 
     }
     .price-card.featured { background: var(--sage); color: var(--white); border-color: var(--sage); }
-    .price-card-label { font-weight: 500; font-size: 1rem; }
-    .price-card-sub { font-size: 0.8rem; opacity: 0.8; }
+    .price-card-label { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 1.3rem; line-height: 1.2; }
+    .price-card-sub { font-size: 0.95rem; opacity: 0.9; margin-top: 4px; }
     .price-amount { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; white-space: nowrap; margin-left: 20px; }
     .prices-note { margin-top: 20px; text-align: left; opacity: 0.9; } /* Issue #31: matched font style */
 
@@ -347,7 +347,7 @@
       .nav-links, .nav-cta { display: none; }
       .burger { display: block; }
       .hero-grid, .terapi-feature, .about-inner, .prices-row, .contact-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr !important; }
       .hero-image-wrap { aspect-ratio: 16/10; order: 2; }
       .profil-img-wrap { aspect-ratio: 3/4; } /* Force portrait for profile */
       .healing-img-wrap { aspect-ratio: 1/1; } /* Issue #52: Square 1:1 ratio for r.jpeg on mobile */
@@ -388,6 +388,7 @@
         <li><a href="#healing">HEALING</a></li>
         <li><a href="#praktisk">PRAKTISK INFO</a></li>
         <li><a href="#etik">ETIK & RAMMER</a></li>
+        <li><a href="#kontakt">KONTAKT</a></li>
       </ul>
       <a href="#kontakt" class="nav-cta">Bestil tid</a>
       <button class="burger" id="burger-btn">
@@ -648,14 +649,6 @@
           <p style="margin-bottom: 16px;">Kontakt mig i første omgang på mail eller sms for en aftale om en 15 minutters uforpligtende telefonsamtale.</p>
           
           <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 16px;">
-            <div class="price-card" style="width: 100%; padding: 16px 20px;">
-              <div class="price-card-info">
-                <p class="price-card-label">Træningsklient session</p>
-                <p class="price-card-sub">Samtaleterapi 75 minutter<br>Reiki healing 75 minutter</p>
-              </div>
-              <div class="price-amount">300 kr.</div>
-            </div>
-
             <div class="price-card featured" style="width: 100%; padding: 10px 20px;">
               <div class="price-card-info">
                 <p class="price-card-label">Uforpligtende samtale</p>
@@ -663,14 +656,25 @@
               </div>
               <div class="price-amount">Gratis</div>
             </div>
+
+            <div class="price-card" style="width: 100%; padding: 16px 20px;">
+              <div class="price-card-info">
+                <p class="price-card-label">Træningsklient session</p>
+                <p class="price-card-sub">Samtaleterapi 75 minutter<br>Reiki healing 75 minutter</p>
+              </div>
+              <div class="price-amount">300 kr.</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: center; margin-top: 24px;">
+            <a href="#kontakt" class="btn-primary">Kontakt mig</a>
           </div>
         </div>
 
-        <div class="parallax-element" data-speed="-0.05" style="display: flex; flex-direction: column; align-items: center;">
+        <div class="parallax-element" data-speed="-0.05">
           <div class="hero-image-wrap fade-up" style="width: 100%;">
             <img src="Rude.jpeg" alt="Udsigt fra vinduet" />
           </div>
-          <a href="#kontakt" class="btn-primary fade-up" style="margin-top: 20px;">Kontakt mig</a>
         </div>
       </div>
 
