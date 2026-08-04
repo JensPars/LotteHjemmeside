@@ -353,6 +353,14 @@
       .healing-img-wrap { aspect-ratio: 1/1; } /* Issue #52: Square 1:1 ratio for r.jpeg on mobile */
       .healing-img { object-fit: cover; } /* Issue #52: Full cover fit with rounded corners, no background border */
 
+      /* Issue #52: Mobile order for HEALING section - place photo after text & cards, before Praktisk info */
+      #healing .container { display: flex; flex-direction: column; }
+      #healing .terapi-feature { display: contents; }
+      #healing .section-label { order: 1; }
+      #healing .healing-text-col { order: 2; margin-top: 24px; margin-bottom: 30px; }
+      #healing .services-grid { order: 3; margin-top: 0; }
+      #healing .healing-photo-col { order: 4; margin-top: 40px; }
+
       /* Issue #34: Swap hjerte and blomst on mobile */
       .hide-mobile { display: none !important; }
       .show-mobile { display: block !important; }
@@ -551,12 +559,12 @@
     <div class="container">
       <span class="section-label">HEALING</span>
       <div class="terapi-feature" style="margin-top: 24px; margin-bottom: 40px;">
-        <div class="parallax-element" data-speed="-0.05">
+        <div class="parallax-element healing-photo-col" data-speed="-0.05">
           <div class="hero-image-wrap healing-img-wrap fade-up">
             <img src="r.jpeg" alt="Reiki Hænder" class="healing-img" />
           </div>
         </div>
-        <div>
+        <div class="healing-text-col">
           <div class="fade-up">
             <h2 class="section-title">Reiki og chakra healing</h2>
             <p class="section-intro" style="margin-bottom: 0;">
